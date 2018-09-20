@@ -1,0 +1,11 @@
+import telebot
+import constants
+
+bot = telebot.TeleBot(constants.token)
+
+@bot.message_handler(commands=['start'])
+def handle_start(message):
+    bot.reply_to(message, "Bot Started")
+
+
+bot.polling()
